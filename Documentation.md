@@ -114,9 +114,9 @@ Result: Optimal path found: Block 2 → Block 5 → Block 8
 ```
 
 **Properties**:
-- ✅ **Complete**: Always finds a path if one exists
-- ✅ **Optimal**: Finds shortest path (with admissible heuristic)
-- ✅ **Efficient**: Faster than Dijkstra (uses heuristic)
+- **Complete**: Always finds a path if one exists
+- **Optimal**: Finds shortest path (with admissible heuristic)
+- **Efficient**: Faster than Dijkstra (uses heuristic)
 - Time Complexity: **O((V + E) log V)**
 
 ---
@@ -166,9 +166,9 @@ Decision: Collect Block 6 or 8 first (equal priority)
 ```
 
 **Properties**:
-- ✅ **Fast**: O(log n) per selection
-- ✅ **Greedy**: Always chooses nearest target
-- ⚠️ **Not Optimal**: May not give globally best order
+- **Fast**: O(log n) per selection
+- **Greedy**: Always chooses nearest target
+- **Not Optimal**: May not give globally best order
 - Good enough for our use case (minimizes travel time locally)
 
 ---
@@ -212,9 +212,9 @@ Block 3
 ```
 
 **Properties**:
-- ✅ **Memory Efficient**: O(V) space
-- ✅ **Complete**: Visits all reachable blocks
-- ✅ **Heuristic-Guided**: Not purely random DFS
+- **Memory Efficient**: O(V) space
+- **Complete**: Visits all reachable blocks
+- **Heuristic-Guided**: Not purely random DFS
 - Time Complexity: **O(V + E)**
 
 ---
@@ -264,9 +264,9 @@ Resume exploration from Block 12
 ```
 
 **Properties**:
-- ✅ **Intelligent**: Uses A* to find best backtrack route
-- ✅ **Efficient**: Doesn't revisit unless necessary
-- ✅ **Complete**: Ensures all reachable blocks explored
+- **Intelligent**: Uses A* to find best backtrack route
+- **Efficient**: Doesn't revisit unless necessary
+- **Complete**: Ensures all reachable blocks explored
 
 ---
 
@@ -279,35 +279,35 @@ Resume exploration from Block 12
 │         HYBRID SEARCH NAVIGATION SYSTEM                 │
 ├─────────────────────────────────────────────────────────┤
 │                                                         │
-│  LAYER 1: Target Identification                        │
-│  ┌─────────────────────────────────────┐              │
-│  │ Remote Scan+Detect (2s per block)   │              │
-│  │ → Identifies R2 KFS locations       │              │
-│  └─────────────────────────────────────┘              │
+│  LAYER 1: Target Identification                         │
+│  ┌─────────────────────────────────────┐                │
+│  │ Remote Scan+Detect (2s per block)   │                │
+│  │ → Identifies R2 KFS locations       │                │
+│  └─────────────────────────────────────┘                │
 │                    ↓                                    │
-│  LAYER 2: Target Prioritization                       │
-│  ┌─────────────────────────────────────┐              │
-│  │ Greedy Best-First Search            │              │
-│  │ → Selects nearest R2 KFS            │              │
-│  └─────────────────────────────────────┘              │
+│  LAYER 2: Target Prioritization                         │
+│  ┌─────────────────────────────────────┐                │
+│  │ Greedy Best-First Search            │                │
+│  │ → Selects nearest R2 KFS            │                │
+│  └─────────────────────────────────────┘                │
 │                    ↓                                    │
-│  LAYER 3: Path Planning                                │
-│  ┌─────────────────────────────────────┐              │
-│  │ A* Pathfinding                      │              │
-│  │ → Finds optimal route to target     │              │
-│  └─────────────────────────────────────┘              │
+│  LAYER 3: Path Planning                                 │
+│  ┌─────────────────────────────────────┐                │
+│  │ A* Pathfinding                      │                │
+│  │ → Finds optimal route to target     │                │
+│  └─────────────────────────────────────┘                │
 │                    ↓                                    │
-│  LAYER 4: Exploration (if no targets)                 │
-│  ┌─────────────────────────────────────┐              │
-│  │ DFS with Heuristic Guidance         │              │
-│  │ → Systematic block exploration      │              │
-│  └─────────────────────────────────────┘              │
+│  LAYER 4: Exploration (if no targets)                   │
+│  ┌─────────────────────────────────────┐                │
+│  │ DFS with Heuristic Guidance         │                │
+│  │ → Systematic block exploration      │                │
+│  └─────────────────────────────────────┘                │
 │                    ↓                                    │
-│  LAYER 5: Recovery                                     │
-│  ┌─────────────────────────────────────┐              │
-│  │ Backtracking                        │              │
-│  │ → Escapes dead ends                 │              │
-│  └─────────────────────────────────────┘              │
+│  LAYER 5: Recovery                                      │
+│  ┌─────────────────────────────────────┐                │
+│  │ Backtracking                        │                │
+│  │ → Escapes dead ends                 │                │
+│  └─────────────────────────────────────┘                │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -422,39 +422,39 @@ Where:
 ```
 Requirement: Find shortest path between blocks
 Why A*: 
-  ✅ Optimal (guaranteed shortest path)
-  ✅ Efficient (faster than Dijkstra with good heuristic)
-  ✅ Complete (finds solution if exists)
+   Optimal (guaranteed shortest path)
+   Efficient (faster than Dijkstra with good heuristic)
+   Complete (finds solution if exists)
 
 Alternative: Dijkstra
-  ❌ Slower (no heuristic guidance)
-  ✅ Also optimal
+   Slower (no heuristic guidance)
+   Also optimal
 ```
 
 ### Greedy Best-First for Target Selection
 ```
 Requirement: Decide which R2 KFS to collect first
 Why Greedy:
-  ✅ Fast decisions (O(log n))
-  ✅ Good local optimum (nearest first)
-  ✅ Simple to implement
+   Fast decisions (O(log n))
+   Good local optimum (nearest first)
+   Simple to implement
 
 Alternative: Exhaustive Search
-  ❌ Too slow (tries all permutations)
-  ✅ Globally optimal
+   Too slow (tries all permutations)
+   Globally optimal
 ```
 
 ### DFS for Exploration
 ```
 Requirement: Systematically check all blocks
 Why DFS:
-  ✅ Memory efficient (O(V) space)
-  ✅ Natural recursion
-  ✅ Complete coverage
+   Memory efficient (O(V) space)
+   Natural recursion
+   Complete coverage
 
 Alternative: BFS
-  ❌ More memory (O(V) queue)
-  ✅ Same coverage
+   More memory (O(V) queue)
+   Same coverage
   ≈ Similar performance for small graphs
 ```
 
@@ -462,13 +462,13 @@ Alternative: BFS
 ```
 Requirement: Escape dead ends
 Why Backtracking:
-  ✅ Re-uses visited path knowledge
-  ✅ Intelligent (uses A* to find best route back)
-  ✅ Efficient (doesn't blindly retrace)
+   Re-uses visited path knowledge
+   Intelligent (uses A* to find best route back)
+   Efficient (doesn't blindly retrace)
 
 Alternative: Random Walk
-  ❌ Inefficient (may revisit many times)
-  ❌ No guarantee of finding unvisited blocks
+   Inefficient (may revisit many times)
+   No guarantee of finding unvisited blocks
 ```
 
 ---
@@ -484,10 +484,10 @@ Alternative: Random Walk
 4. **Intelligent Backtracking** - A*-guided recovery
 
 **Properties**:
-- ✅ **Complete**: Will explore all reachable blocks
-- ✅ **Optimal Pathfinding**: A* guarantees shortest paths
-- ⚠️ **Near-Optimal Target Selection**: Greedy is good but not globally optimal
-- ✅ **Time-Bounded**: Aborts before 90s limit
+-  **Complete**: Will explore all reachable blocks
+-  **Optimal Pathfinding**: A* guarantees shortest paths
+-  **Near-Optimal Target Selection**: Greedy is good but not globally optimal
+-  **Time-Bounded**: Aborts before 90s limit
 
 **Academic Classification**: 
 This is a **"Heuristic-Guided Graph Traversal with Priority-Based Target Collection"** algorithm.
@@ -827,9 +827,9 @@ Pure DFS: O(V + E) = O(40) operations, BUT:
   - Random exploration order
   
 Our Algorithm: O(V(V+E)log V) ≈ O(908) operations, BUT:
-  ✅ Optimal paths (A*)
-  ✅ Smart target selection (Greedy)
-  ✅ Efficient exploration
+   Optimal paths (A*)
+   Smart target selection (Greedy)
+   Efficient exploration
   
 Trade-off: 23× more operations, but much better paths
 Physical time saved: 20-30 seconds
@@ -870,8 +870,8 @@ Complete navigation           ~0.5ms total       70000ms avg
 **Key Takeaway**: Algorithm efficiency has **zero practical impact** on total time because physical actions dominate.
 
 What matters:
-- ❌ NOT: Algorithm runs in 0.5ms vs 1ms (negligible)
-- ✅ YES: Algorithm finds path that saves one climb (10 seconds saved!)
+-  NOT: Algorithm runs in 0.5ms vs 1ms (negligible)
+-  YES: Algorithm finds path that saves one climb (10 seconds saved!)
 
 ### Optimality Analysis
 
@@ -1155,19 +1155,19 @@ kfs_config = {}  # No KFS
 ### Visual Indicators
 
 **Block Colors** (height):
-- 🟢 Dark Green: 200H
-- 🟢 Medium Green: 400H
-- 🟢 Light Green: 600H
+-  Dark Green: 200H
+-  Medium Green: 400H
+   Light Green: 600H
 
 **KFS Markers** (actual placement):
-- 🔴 Red circle: R1 KFS
-- 🔵 Blue circle: R2 KFS
-- 🟡 Yellow circle: Fake KFS
+-  Red circle: R1 KFS
+-  Blue circle: R2 KFS
+-  Yellow circle: Fake KFS
 
 **Robot Status**:
-- 🟧 Orange border: Visited (robot climbed here)
-- 🟣 Purple dot: Detected remotely (robot scanned this block)
-- 🔴 Red robot icon: Current position
+-  Orange border: Visited (robot climbed here)
+-  Purple dot: Detected remotely (robot scanned this block)
+-  Red robot icon: Current position
 
 ### Reading the Flow
 
@@ -1319,10 +1319,10 @@ Motor Control
 
 The remote scan+detect algorithm provides **superior efficiency** by:
 
-✅ **Detecting KFS type before climbing** (2s vs 12s)
-✅ **Only climbing to confirmed R2 KFS** (no wasted movements)
-✅ **Saving 30-40 seconds per game** (avoiding wrong climbs)
-✅ **Collecting 2-3 R2 KFS reliably** (within 90s limit)
+ **Detecting KFS type before climbing** (2s vs 12s)
+ **Only climbing to confirmed R2 KFS** (no wasted movements)
+ **Saving 30-40 seconds per game** (avoiding wrong climbs)
+ **Collecting 2-3 R2 KFS reliably** (within 90s limit)
 
 This makes it the **optimal strategy** for ABU Robocon 2026 Meihua Forest navigation.
 
