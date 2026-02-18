@@ -5,7 +5,7 @@
 
 ---
 
-## 🎯 Core Innovation
+##  Core Innovation
 
 **Remote Detection Technology**:
 - Scan adjacent blocks and detect KFS type **WITHOUT climbing** (2s per block)
@@ -19,7 +19,7 @@ NEW: Detect remotely (2s) → IF R2 → Climb (10s) ✓
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
 ```bash
 # Install
@@ -40,7 +40,7 @@ Status: ✓ SUCCESS
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 ### Algorithm Flow
 
@@ -83,7 +83,7 @@ Remote Sensing:
 
 ---
 
-## 📊 Time Breakdown
+##  Time Breakdown
 
 | Action | Time | When |
 |--------|------|------|
@@ -115,16 +115,16 @@ R1 avoided: 1 (saved 10s!)
 
 ---
 
-## 🎨 Visualization
+##  Visualization
 
 **What You'll See**:
-- 🟢 Green blocks: Forest (darker = lower)
-- 🔴 Red circles: R1 KFS (ignored)
-- 🔵 Blue circles: R2 KFS (collected)
-- 🟡 Yellow circles: Fake KFS (ignored)
-- 🟧 Orange border: Visited (climbed)
-- 🟣 Purple dot: Detected remotely
-- 🔴 Red icon: Current robot position
+-  Green blocks: Forest (darker = lower)
+-  Red circles: R1 KFS (ignored)
+-  Blue circles: R2 KFS (collected)
+-  Yellow circles: Fake KFS (ignored)
+-  Orange border: Visited (climbed)
+-  Purple dot: Detected remotely
+-  Red icon: Current robot position
 
 **Reading the Flow**:
 1. Purple dots appear → Robot detecting remotely
@@ -133,7 +133,7 @@ R1 avoided: 1 (saved 10s!)
 
 ---
 
-## 🧪 Test Configurations
+##  Test Configurations
 
 ### Config 1: Ideal Clustering
 ```python
@@ -170,7 +170,7 @@ kfs_config = {
 
 ---
 
-## 🎮 Customization
+##  Customization
 
 Edit `main()` in the code:
 
@@ -195,7 +195,7 @@ Block 8 = (2, 1)
 
 ---
 
-## 📈 Performance
+##  Performance
 
 ### Efficiency Metrics
 
@@ -221,7 +221,7 @@ Avoided climbs: 2 × 10s = 20s saved!
 
 ---
 
-## 📊 Expected Output
+##  Expected Output
 
 ```
 ============================================================
@@ -291,7 +291,7 @@ Efficiency Analysis:
 
 ---
 
-## 🎯 Key Advantages
+##  Key Advantages
 
 ### 1. **Time Efficiency**
 ```
@@ -343,7 +343,7 @@ pip install pygame==2.5.2
 
 ---
 
-## 📚 Full Documentation
+##  Full Documentation
 
 See `DOCUMENTATION.md` for:
 - Complete algorithm explanation
@@ -353,26 +353,26 @@ See `DOCUMENTATION.md` for:
 
 ---
 
-## 🏆 Algorithm Highlights
+##  Algorithm Highlights
 
 **Innovation**:
-- ✅ Remote sensing (detect without climbing)
-- ✅ 2s detection vs 12s climb+detect
-- ✅ Only climb to confirmed R2 KFS
+-  Remote sensing (detect without climbing)
+-  2s detection vs 12s climb+detect
+-  Only climb to confirmed R2 KFS
 
 **Performance**:
-- ✅ 2-3 R2 KFS collected typically
-- ✅ 30-40s saved per game
-- ✅ 85% success rate
+-  2-3 R2 KFS collected typically
+-  30-40s saved per game
+-  85% success rate
 
 **Intelligence**:
-- ✅ Priority-based target selection
-- ✅ A* pathfinding for efficiency
-- ✅ Adaptive exploration strategy
+-  Priority-based target selection
+-  A* pathfinding for efficiency
+-  Adaptive exploration strategy
 
 ---
 
-## 🎬 How to Use
+##  How to Use
 
 1. **Install dependencies**: `pip install -r requirements.txt`
 2. **Configure KFS placement**: Edit `kfs_config` in `main()`
@@ -382,23 +382,23 @@ See `DOCUMENTATION.md` for:
 
 ---
 
-## 📊 Success Criteria
+##  Success Criteria
 
 **Target**:
-- ⏱️ Complete within 90 seconds
-- 🎯 Collect 2-3 R2 KFS
-- 🚫 Avoid all R1 and Fake KFS
-- 📍 Cover 60-80% of forest
+-  Complete within 90 seconds
+-  Collect 2-3 R2 KFS
+-  Avoid all R1 and Fake KFS
+-  Cover 60-80% of forest
 
 **Achieved**:
-- ✅ Average 76s completion
-- ✅ 2.5 R2 KFS average
-- ✅ 100% R1/Fake avoidance
-- ✅ 75% coverage
+-  Average 76s completion
+-  2.5 R2 KFS average
+-  100% R1/Fake avoidance
+-  75% coverage
 
 ---
 
-## 💡 Real-World Hardware
+##  Real-World Hardware
 
 To implement on actual robot:
 
@@ -409,7 +409,7 @@ To implement on actual robot:
 
 ---
 
-## 🎓 Learning Points
+##  Learning Points
 
 **Key Concepts**:
 1. Remote sensing reduces physical movement
@@ -425,7 +425,7 @@ To implement on actual robot:
 
 ---
 
-## 📦 Files
+##  Files
 
 ```
 ├── robocon_r2_navigator.py   # Main algorithm
@@ -436,7 +436,7 @@ To implement on actual robot:
 
 ---
 
-## 🚀 Why This Approach Wins
+##  Why This Approach Wins
 
 **Traditional**: Climb everywhere, check each block
 - Time: 120s+ (impossible)
